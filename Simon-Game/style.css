@@ -51,7 +51,7 @@ h3{
     background-color: rgb(62, 62, 253);
 }
 .green{
-    background-color: rgb(62, 254, 62);
+    background-color: rgb(4, 188, 4);
 }
 .yellow{
     background-color: rgb(250, 250, 63);
@@ -61,4 +61,7 @@ h3{
 }
 .flash{
     background-color: white;
+}
+.user_flash{
+    background-color: rgb(3, 248, 3);
 }

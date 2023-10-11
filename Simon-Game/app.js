@@ -1,14 +1,15 @@
 let seq=[];
 let user_seq=[];
 let button=["red","blue","green","yellow"];
-let level=0;
 let start=false;
+let level;
 
 let h3=document.querySelector("h3");
 let btn=document.querySelector("button");
 btn.addEventListener("click",function(){
     btn.classList.add("dis")
     start=true;
+    level=0;
     levelup();
 });
 
@@ -18,21 +19,41 @@ function btnflash(btn){
         btn.classList.remove("flash");
     },1000);
 }
-let i=-1;
+function userflash(btn){
+    btn.classList.add("user_flash");
+    setTimeout(()=>{
+        btn.classList.remove("user_flash")
+    },500);
+}
 function levelup(){
     level++;
     h3.innerText=` Level ${level}`;
-    i=0;
     let index=Math.floor(Math.random()*3);
     let rancolor=button[index];
     seq.push(rancolor);
     btnflash(document.querySelector(`.${rancolor}`));
 }
+function checkans(idx){
+    if(user_seq[idx]==seq[idx]){
+        if(user_seq.length==seq.length){
+            levelup();
+            user_seq=[];
+        }
+    }
+    else{
+        h3.innerText="Game over please try again";
+        btn.classList.remove("dis")
+        user_seq=[];
+        seq=[];
+        start=false;
+    }
+}
 function press(){
-    console.log("helo");
-    user_seq.push(this.classList[1]);
-    btnflash(this);
-    // btnflash(this.ansbtn);
+    userflash(this);
+    let clas=this.classList[1];
+    console.log(clas);
+    user_seq.push(clas);
+    checkans(user_seq.length-1);
 }
 let ansbtns=document.querySelectorAll("span");
 for(ansbtn of ansbtns){
