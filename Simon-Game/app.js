@@ -28,10 +28,18 @@ function userflash(btn){
 function levelup(){
     level++;
     h3.innerText=` Level ${level}`;
-    let index=Math.floor(Math.random()*3);
+    let index=Math.floor(Math.random()*4);
+    console.log(index);
     let rancolor=button[index];
     seq.push(rancolor);
     btnflash(document.querySelector(`.${rancolor}`));
+}
+function gameover(){
+    let body=document.querySelector("body");
+    body.classList.add("over");
+    setTimeout(()=>{
+        body.classList.remove("over");
+    },2000);
 }
 function checkans(idx){
     if(user_seq[idx]==seq[idx]){
@@ -41,7 +49,8 @@ function checkans(idx){
         }
     }
     else{
-        h3.innerText="Game over please try again";
+        h3.innerText=`High score ${level} . Game over plese try again`;
+        gameover();
         btn.classList.remove("dis")
         user_seq=[];
         seq=[];
