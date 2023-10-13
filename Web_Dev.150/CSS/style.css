@@ -1,0 +1,102 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    color: aliceblue;
+}
+body{
+    background-image: url("/BG.jpg");
+    background-size: cover;
+}
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+}
+nav{
+    height:20%;
+}
+#logo{
+    font-size: 3rem;
+    font-weight: 400;
+    margin-right: auto;
+    padding: 1rem;
+}
+.btns{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    align-items: center;
+}
+.btns a{
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 10px 20px;
+    transition: all .5s ease ;
+}
+button{
+    margin: 0 30px;
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    border-radius: 25px;
+    border: 2px solid aliceblue;
+    background: transparent;
+    transition: all .5s ease ;
+}
+button:hover{
+    color: black;
+    background-color: aliceblue;
+    box-shadow: 0 0 10px aliceblue;
+}
+.btns a:hover{
+    transform: translateY(-5px);
+    font-size: 1.8rem;
+}
+@media(max-width:850px){
+    header{
+        flex-direction: column;
+    }
+    .btns{
+        flex-direction: column;
+        height: 200px;
+    }
+    #logo{
+        margin:10px auto;
+    }
+}
+/* DIV */
+section .box{
+    height:100px;
+    width:100px;
+    border: 2px solid red;
+    border-radius: 50%;
+    background-color: yellow;
+    transition: all 0.5s ease 0.2s;
+    margin: 30vh auto;
+    transform: translateY(0px);
+    box-shadow: 0 0 10px yellow;
+    animation: jump 1s linear 0.3s infinite normal ;
+    animation-play-state: paused;
+}
+.box:hover{
+    animation-play-state: running;
+}
+@keyframes jump {
+    0%{
+        transform: translateY(0px);
+    }
+    25%{
+        transform: translateY(-100px); 
+    }
+    50%{
+        transform: translateY(0px); 
+    }
+    75%{
+        transform: translateY(100px);
+    }
+    100%{
+        transform: translateY(0px); 
+    }
+}
