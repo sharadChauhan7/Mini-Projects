@@ -1,0 +1,47 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(232, 232, 232);
+}
+nav{
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.navbar-brand{
+    font-size: 2rem;
+    color: #b92b27;
+}
+nav+.container-fluid{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.post{
+    margin: 20px 0;
+    width: 35%;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.head h4{
+    margin: 0;
+}
+.head p{
+    font-weight: 400;
+    opacity: 0.7;
+}
+.footer{
+    display: flex;
+    padding: 0;
+}
+.edit a{
+    margin: 0 10px;
+}
+.edit{
+    margin-left: auto;
+}
+.body textarea{
+    width: 80%;
+    margin: 10px 0;
+}
