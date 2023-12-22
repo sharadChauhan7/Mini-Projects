@@ -1,0 +1,123 @@
+/* @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700"); */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    padding: 50px 0; 
+}
+.wrapper{
+    width: 500px;
+    height: 500px;
+    margin: 0px auto;
+    display: flex;
+    border-radius: 25px;
+    flex-direction: column;
+    background:#FF6666;
+    padding: 40px 0 0 0;
+    
+}
+/* Search Bar */
+.search{
+    width: 90%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin:50px 40px;
+    padding-top:20px;
+    border-top: 2px solid white;
+}
+.search input{
+    width: 65%;
+    height: 100%;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    border: none;
+    margin: 0 5px;
+    padding: 5px 15px 5px 10px;
+    color: gray;
+}
+.search button{
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(50deg, #FF6666 25%, rgb(246, 195, 195) ,#FF6666);
+    border: none;
+    box-shadow: 2px 2px 10px white;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}
+/* Heading */
+.title{
+    margin: 10px 20px 10px 40px;
+    padding: 0 0 10px;
+    border-bottom: 2px solid white;
+}
+.title h1{
+    font-family: sans-serif;
+    color: white;
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin-bottom:10px;
+}
+.title p{
+    font-family: sans-serif;
+    color: white;
+    font-size: .9rem;
+    font-weight: 300;
+}
+/* Tasks */
+.tasks{
+    height: 100%;
+    overflow:scroll;
+}
+.tasks ul{
+    list-style: none;
+}.tasks li{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.tasks input{
+    margin: 0 20px;
+    margin-left: 50px;
+    scale: 1.5;
+    color: gray;
+}
+.tasks span{
+    font-size: 1.3rem;
+    margin: 0 auto 0 10px;
+    font-family: sans-serif;
+    color: white;
+    position: relative;
+    transition: 0.5s;
+}
+.tasks i{
+    color: white;
+    margin-right:20px;
+}
+
+/* Animation */
+
+.tasks input[type=checkbox] ~ span::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #f1faee;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+.tasks input[type=checkbox]:checked ~ span {
+  color: #fbb8b8;
+}
+.tasks input[type=checkbox]:checked ~ span::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
