@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Dropdown from './dropdown'
+import Show from './show'
 import './App.css'
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <Dropdown/>
+      <Show/>
     </>
   )
 }
