@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes  } from "react-router-dom";
 import Home from "./components/Home";
 import Reel from "./components/Reels";
 import FindReel from "./components/FindReel";
+import Navbar from './components/Navbar'
 
 const Routs = () => {
     let [videosList, setVideosList] = React.useState(null);
@@ -10,6 +11,7 @@ const Routs = () => {
     let [videoIdx, setVideoIdx] = React.useState(0);
     return (
         <Router>
+            <Navbar/>
         <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/reels" element={<FindReel setVideosList={setVideosList} videosList={videosList} />} />

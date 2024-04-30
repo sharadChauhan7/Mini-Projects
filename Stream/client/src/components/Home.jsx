@@ -5,9 +5,8 @@ function Home() {
 
   return (
     <>
-       <div className="box">
-        <h1>Home</h1>
-          <Link to="/reels">Reels</Link>
+       <div className="flex justify-center items-center h-[90vh]">
+        <p className='text-8xl font-semibold'>Video Streaming</p>
        </div>
     </>
   )

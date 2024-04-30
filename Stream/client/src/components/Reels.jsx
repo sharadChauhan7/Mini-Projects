@@ -15,9 +15,11 @@ function Home({videoIdx,setVideoIdx,videosList}) {
   return (
 
     <>
-       <div className="box">
-        {videosList?<video autoPlay controls src={`http://localhost:3000/video/${id}`} className='box'></video>:<h1>Loading...</h1>}
-        <button onClick={next}>Next</button>
+       <div className="flex flex-col justify-center items-center text-4xl mt-14">
+        {videosList?<video autoPlay muted controls src={`http://localhost:3000/video/${id}`} className='w-[20vw] h-[70vh] rounded-3xl border-4 bg-gray-800'></video>:<h1>Loading...</h1>}
+        {/* Button to move on next video  */}
+        <button onClick={next} className='bg-blue-500 text-white p-2 rounded-md mt-4'>Next</button>
+
        </div>
     </>
   )
